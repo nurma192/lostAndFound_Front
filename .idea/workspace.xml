@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="bb6a87ad-c57d-414b-bf97-3b953d107643" name="Changes" comment="change">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ItemCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ItemCard.tsx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;nurma192&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/nurma192/Lost-Found_Front.git&quot;,
+    &quot;accountId&quot;: &quot;e29362eb-81d8-4f15-bff9-8193f38b8bd9&quot;
+  }
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2onHq5tJgQiAghRLExauiIHkDHH" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/Users/nurmakhanbetkenes/Desktop/MineFolder/Projects/lost-and-found/src/api",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "/Users/nurmakhanbetkenes/Desktop/MineFolder/Projects/lost-and-found/node_modules/typescript/lib"
+  },
+  "keyToStringList": {
+    "ChangesTree.GroupingKeys": [
+      "directory"
+    ]
+  }
+}]]></component>
+  <component name="ReactDesignerToolWindowState">
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.intellij.reactbuddy.reactComponents" value="false" />
+        <entry key="com.intellij.reactbuddy.reactInspector" value="false" />
+        <entry key="com.intellij.reactbuddy.storybook" value="false" />
+      </map>
+    </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/api" />
+      <recent name="$PROJECT_DIR$/public/icons" />
+      <recent name="$PROJECT_DIR$/src/fonts/ceraPro" />
+      <recent name="$PROJECT_DIR$/src/icons" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components" />
+      <recent name="$PROJECT_DIR$/public/icons" />
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$/src/Layout" />
+      <recent name="$PROJECT_DIR$/src/layout" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-WS-242.21829.149" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bb6a87ad-c57d-414b-bf97-3b953d107643" name="Changes" comment="" />
+      <created>1731498606774</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1731498606774</updated>
+    </task>
+    <task id="LOCAL-00001" summary="creating env file">
+      <option name="closed" value="true" />
+      <created>1732816264660</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1732816264660</updated>
+    </task>
+    <task id="LOCAL-00002" summary="text.txt">
+      <option name="closed" value="true" />
+      <created>1732816687855</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1732816687855</updated>
+    </task>
+    <task id="LOCAL-00003" summary="adding categories">
+      <option name="closed" value="true" />
+      <created>1732822713725</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1732822713725</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add getLostItems">
+      <option name="closed" value="true" />
+      <created>1732825021431</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1732825021431</updated>
+    </task>
+    <task id="LOCAL-00005" summary="new hook custom params">
+      <option name="closed" value="true" />
+      <created>1732984812168</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1732984812168</updated>
+    </task>
+    <task id="LOCAL-00006" summary="set useQuery config">
+      <option name="closed" value="true" />
+      <created>1732984861640</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1732984861640</updated>
+    </task>
+    <task id="LOCAL-00007" summary="create ItemCard.tsx">
+      <option name="closed" value="true" />
+      <created>1732984923938</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1732984923938</updated>
+    </task>
+    <task id="LOCAL-00008" summary="create CategoriesList.tsx">
+      <option name="closed" value="true" />
+      <created>1732985033955</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1732985033955</updated>
+    </task>
+    <task id="LOCAL-00009" summary="create lostItemsApi foundItemsApi and components">
+      <option name="closed" value="true" />
+      <created>1732985115168</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1732985115168</updated>
+    </task>
+    <task id="LOCAL-00010" summary="change userApi logic">
+      <option name="closed" value="true" />
+      <created>1732985178020</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1732985178020</updated>
+    </task>
+    <task id="LOCAL-00011" summary="categories counts from request Type">
+      <option name="closed" value="true" />
+      <created>1733006134375</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1733006134375</updated>
+    </task>
+    <task id="LOCAL-00012" summary="changes">
+      <option name="closed" value="true" />
+      <created>1733006170863</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1733006170863</updated>
+    </task>
+    <task id="LOCAL-00013" summary="fixes">
+      <option name="closed" value="true" />
+      <created>1733006226129</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1733006226129</updated>
+    </task>
+    <task id="LOCAL-00014" summary="add items api">
+      <option name="closed" value="true" />
+      <created>1733079685880</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1733079685880</updated>
+    </task>
+    <task id="LOCAL-00015" summary="add items api">
+      <option name="closed" value="true" />
+      <created>1733079808044</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1733079808044</updated>
+    </task>
+    <task id="LOCAL-00016" summary="add girignore">
+      <option name="closed" value="true" />
+      <created>1733398459061</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1733398459061</updated>
+    </task>
+    <task id="LOCAL-00017" summary="add lost item page and found item page">
+      <option name="closed" value="true" />
+      <created>1733398632943</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1733398632943</updated>
+    </task>
+    <task id="LOCAL-00018" summary="remove node modules">
+      <option name="closed" value="true" />
+      <created>1733399404059</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1733399404059</updated>
+    </task>
+    <task id="LOCAL-00019" summary="remove node modules2">
+      <option name="closed" value="true" />
+      <created>1733399542838</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1733399542838</updated>
+    </task>
+    <task id="LOCAL-00020" summary="remove node modules3">
+      <option name="closed" value="true" />
+      <created>1733399838186</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1733399838186</updated>
+    </task>
+    <task id="LOCAL-00021" summary="remove node modules3">
+      <option name="closed" value="true" />
+      <created>1733400161534</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1733400161534</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="5f90a234-7dcf-4ce4-a76a-bbecf37160a3" value="TOOL_WINDOW" />
+        <entry key="584a6ec0-8a94-45bc-9225-f26915c19583" value="TOOL_WINDOW" />
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="584a6ec0-8a94-45bc-9225-f26915c19583">
+          <value>
+            <State />
+          </value>
+        </entry>
+        <entry key="5f90a234-7dcf-4ce4-a76a-bbecf37160a3">
+          <value>
+            <State />
+          </value>
+        </entry>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="creating env file" />
+    <MESSAGE value="text.txt" />
+    <MESSAGE value="adding categories" />
+    <MESSAGE value="add getLostItems" />
+    <MESSAGE value="new hook custom params" />
+    <MESSAGE value="set useQuery config" />
+    <MESSAGE value="create ItemCard.tsx" />
+    <MESSAGE value="create CategoriesList.tsx" />
+    <MESSAGE value="create lostItemsApi foundItemsApi and components" />
+    <MESSAGE value="change userApi logic" />
+    <MESSAGE value="categories counts from request Type" />
+    <MESSAGE value="changes" />
+    <MESSAGE value="fixes" />
+    <MESSAGE value="add items api" />
+    <MESSAGE value="add girignore" />
+    <MESSAGE value="add lost item page and found item page" />
+    <MESSAGE value="remove node modules" />
+    <MESSAGE value="remove node modules2" />
+    <MESSAGE value="remove node modules3" />
+    <MESSAGE value="change" />
+    <option name="LAST_COMMIT_MESSAGE" value="change" />
+  </component>
+</project>
