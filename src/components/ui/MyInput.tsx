@@ -1,6 +1,7 @@
-import React from 'react';
+
 import {Input} from "@nextui-org/react";
 import {Control, useController} from "react-hook-form";
+import React from "react";
 
 interface Props {
     name: string;
@@ -25,7 +26,7 @@ export const MyInput: React.FC<Props> = ({
                                          }
 ) => {
 
-    const {field, fieldState: {invalid}, formState:{errors}} = useController({
+    const {field, fieldState: {invalid}, formState: {errors}} = useController({
         name,
         control,
         rules: {
@@ -48,9 +49,10 @@ export const MyInput: React.FC<Props> = ({
             onBlur={field.onBlur}
             errorMessage={`${errors[name]?.message ?? ''}`}
             classNames={{
-                inputWrapper: 'rounded border border-neural-700 bg-white'
+                inputWrapper: `rounded border border-neural-700 bg-white`,
+                input: `${type === 'password' && 'tracking-widest'}`
             }}
-            className={''}
+            className={``}
             endContent={endContent}
         />
     );

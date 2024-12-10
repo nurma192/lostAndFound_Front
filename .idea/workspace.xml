@@ -4,42 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bb6a87ad-c57d-414b-bf97-3b953d107643" name="Changes" comment="update gitignore">
-      <change afterPath="$PROJECT_DIR$/src/api/changePasswordApi.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/api/changePhoneApi.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/api/changeTelegramApi.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/api/loginApi.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/api/registerApi.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/api/sendCodeApi.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/api/updateCredentialsApi.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ListBox.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ShowItemsGrid.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/forms/ChangePasswordForm.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/forms/UpdateCredentialsForm.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ui/MyPasswordInput.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ui/MyTextarea.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/ChangePasswordPage.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/MyItemsPage.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/ProfileInformationPage.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/ProfilePage.tsx" afterDir="false" />
+    <list default="true" id="bb6a87ad-c57d-414b-bf97-3b953d107643" name="Changes" comment="change send code api">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/addItemApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/addItemApi.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/lostItemsApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/lostItemsApi.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/usersApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/userDataApi.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FoundItems.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FoundItems.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ItemCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ItemCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LostItems.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LostItems.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/forms/ChangePasswordForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/ChangePasswordForm.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/forms/LoginForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/LoginForm.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/forms/RegisterForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/RegisterForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/MyButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/MyButton.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ui/MyInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/MyInput.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/useAuth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useAuth.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/AddItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AddItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/queryClient.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/queryClient.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/itemTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/itemTypes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/MyPasswordInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/MyPasswordInput.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +33,7 @@
   }
 }</component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -304,7 +275,71 @@
       <option name="project" value="LOCAL" />
       <updated>1733467847180</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="change inputs in forms">
+      <option name="closed" value="true" />
+      <created>1733830444917</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1733830444917</updated>
+    </task>
+    <task id="LOCAL-00024" summary="change password page and request">
+      <option name="closed" value="true" />
+      <created>1733830474518</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1733830474518</updated>
+    </task>
+    <task id="LOCAL-00025" summary="profile page and listBox">
+      <option name="closed" value="true" />
+      <created>1733830505581</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1733830505581</updated>
+    </task>
+    <task id="LOCAL-00026" summary="change login and register api">
+      <option name="closed" value="true" />
+      <created>1733830553397</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1733830553398</updated>
+    </task>
+    <task id="LOCAL-00027" summary="updating user data apis">
+      <option name="closed" value="true" />
+      <created>1733830604421</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1733830604422</updated>
+    </task>
+    <task id="LOCAL-00028" summary="fixes">
+      <option name="closed" value="true" />
+      <created>1733830668366</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1733830668366</updated>
+    </task>
+    <task id="LOCAL-00029" summary="user items page">
+      <option name="closed" value="true" />
+      <created>1733830695521</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1733830695521</updated>
+    </task>
+    <task id="LOCAL-00030" summary="change send code api">
+      <option name="closed" value="true" />
+      <created>1733830715221</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1733830715221</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -338,9 +373,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="creating env file" />
-    <MESSAGE value="text.txt" />
-    <MESSAGE value="adding categories" />
     <MESSAGE value="add getLostItems" />
     <MESSAGE value="new hook custom params" />
     <MESSAGE value="set useQuery config" />
@@ -350,7 +382,6 @@
     <MESSAGE value="change userApi logic" />
     <MESSAGE value="categories counts from request Type" />
     <MESSAGE value="changes" />
-    <MESSAGE value="fixes" />
     <MESSAGE value="add items api" />
     <MESSAGE value="add girignore" />
     <MESSAGE value="add lost item page and found item page" />
@@ -359,6 +390,14 @@
     <MESSAGE value="remove node modules3" />
     <MESSAGE value="change" />
     <MESSAGE value="update girignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="update girignore" />
+    <MESSAGE value="change inputs in forms" />
+    <MESSAGE value="change password page and request" />
+    <MESSAGE value="profile page and listBox" />
+    <MESSAGE value="change login and register api" />
+    <MESSAGE value="updating user data apis" />
+    <MESSAGE value="fixes" />
+    <MESSAGE value="user items page" />
+    <MESSAGE value="change send code api" />
+    <option name="LAST_COMMIT_MESSAGE" value="change send code api" />
   </component>
 </project>

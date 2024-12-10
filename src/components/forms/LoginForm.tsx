@@ -5,6 +5,7 @@ import {useNavigate} from "react-router-dom";
 import {useAuth} from "../../hooks/useAuth";
 import {MyInput} from "../ui/MyInput";
 import {useLogin} from "../../api/loginApi";
+import {MyPasswordInput} from "../ui/MyPasswordInput";
 
 export type LoginFormBody = {
     email: string;
@@ -43,10 +44,9 @@ function LoginForm() {
                     control={control}
                     required={"Email is required"}
                 />
-                <MyInput
+                <MyPasswordInput
                     name={'password'}
                     label={'Password'}
-                    type={'password'}
                     control={control}
                     required={"Password is required"}
                 />

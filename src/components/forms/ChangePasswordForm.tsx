@@ -3,6 +3,7 @@ import React from "react";
 import {ChangePasswordBody, useChangePassword} from "../../api/changePasswordApi";
 import {SubmitHandler, useForm} from "react-hook-form";
 import {MyInput} from "../../components/ui/MyInput";
+import {MyPasswordInput} from "../ui/MyPasswordInput";
 
 type ChangePasswordFormBody = {
     currentPassword: string;
@@ -32,22 +33,19 @@ function ChangePasswordForm() {
     return (
 
         <form onSubmit={handleSubmit(submitForm)} className={`flex flex-col gap-2`}>
-            <MyInput name={`currentPassword`}
+            <MyPasswordInput name={`currentPassword`}
                      label={`Current Password`}
                      control={control}
-                     type={'password'}
             />
-            <MyInput
+            <MyPasswordInput
                 name={`newPassword`}
                 label={`New Password`}
                 control={control}
-                type={'password'}
             />
-            <MyInput
+            <MyPasswordInput
                 name={`newPasswordConfirm`}
                 label={`Confirm New password`}
                 control={control}
-                type={'password'}
                 validate={(value) =>
                     value === watch('newPassword') || 'Passwords do not match'
                 }

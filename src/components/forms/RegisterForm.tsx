@@ -4,6 +4,7 @@ import MyButton from "../ui/MyButton";
 import {useRegister} from "../../api/registerApi";
 import {useSendCode} from "../../api/sendCodeApi";
 import {MyInput} from "../ui/MyInput";
+import {MyPasswordInput} from "../ui/MyPasswordInput";
 
 export type RegisterFormBody = {
     email: string;
@@ -93,16 +94,14 @@ function RegisterForm() {
                     required="Surname is required"
                     control={control}
                 />
-                <MyInput
+                <MyPasswordInput
                     name={'password'}
-                    type="password"
                     label={'Password'}
                     required="Password is required"
                     control={control}
                 />
-                <MyInput
+                <MyPasswordInput
                     name={'passwordConfirm'}
-                    type="password"
                     label={'Confirm Password'}
                     required="Password is required"
                     control={control}
