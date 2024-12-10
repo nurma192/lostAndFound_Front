@@ -24,8 +24,7 @@ export const addItem = async (data: AddItemFormBody, token: string): Promise<any
             },
             body: formData,
         });
-    }
-    else {
+    } else {
         data.images.forEach(image => {
             formData.append('foundItemImages', image);
         })

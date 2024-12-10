@@ -7,9 +7,11 @@ interface Props {
     className?: string;
     type?: "button" | "submit" | "reset";
     onClick?: () => void;
+    disabled?: boolean;
+    icon?: JSX.Element;
 }
 
-function MyButton({children,color, className, type = "button", onClick}: Props) {
+function MyButton({children,color, className, type = "button", onClick, disabled, icon}: Props) {
     let colorClassName = ""
     if (color === "primary") {
         colorClassName = ` text-white bg-[#1560BD] hover:bg-[#0f488e]`
@@ -19,8 +21,15 @@ function MyButton({children,color, className, type = "button", onClick}: Props) 
         colorClassName = ` text-red-500 bg-transparent border border-transparent hover:border-red-500`
     }
     return (
-        <Button className={`${className} rounded transition ${colorClassName}`} type={type} onClick={() => onClick && onClick()}>
-            {children}
+        <Button className={`${className} h-auto w-auto rounded transition ${colorClassName} disabled:cursor-not-allowed`}
+                type={type}
+                onClick={() => onClick && onClick()}
+                disabled={disabled}
+        >
+            <div className={`m-0 gap-2 flex items-center`}>
+                {icon}
+                {children}
+            </div>
         </Button>
     );
 }

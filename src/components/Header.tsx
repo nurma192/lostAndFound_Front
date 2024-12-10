@@ -2,15 +2,14 @@ import React, {useEffect, useRef, useState} from 'react';
 import MyLink from "./ui/MyLink";
 import MyButton from "./ui/MyButton";
 import {useAuth} from "../hooks/useAuth";
-import {useUserData} from "../api/usersApi";
+import {useUserData} from "../api/userDataApi";
 import {CircularProgress} from "@nextui-org/react";
 import {useCustomParams} from "../hooks/useCustomParams";
 import {useNavigate} from "react-router-dom";
 
 function Header() {
     const inputRef = useRef<HTMLInputElement>(null);
-    const auth = useAuth()
-    const userData = useUserData(auth.token)
+    const userData = useUserData()
     const customParam = useCustomParams()
     const navigate = useNavigate()
     const [isInputOpen, setIsInputOpen] = useState<boolean>(!!customParam.getQueryFromParam())
@@ -79,7 +78,8 @@ function Header() {
                     </div>
                     <img className="w-5" src="/icons/notification.svg" alt="notification"/>
                 </div>
-                <MyButton color="primary" className="flex justify-center items-center h-8 px-5">
+                <MyButton color="primary" className="flex justify-center items-center h-8 px-5"
+                    onClick={() => navigate("/profile")}>
                     <img className="w-4" src="/icons/profileIcon.svg" alt="profile"/>
                     <p className="">{userData.data?.name} {userData.data?.surname}</p>
                     {userData.isLoading && <CircularProgress color="warning" aria-label="Loading..."/>}

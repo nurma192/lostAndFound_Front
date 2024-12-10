@@ -9,20 +9,26 @@ import HomePage from "./pages/HomePage";
 import AddItem from "./pages/AddItem";
 import LostItemPage from "./pages/LostItemPage";
 import FoundItemPage from "./pages/FoundItemPage";
+import ProfilePage from "./pages/ProfilePage";
 
 function App() {
     return (
         <QueryClientProvider client={queryClient}>
             <NextUIProvider>
-                <BrowserRouter>
+                <BrowserRouter future={{
+                    v7_startTransition: true,
+                    v7_relativeSplatPath: true
+                }}>
                     <Routes>
                         <Route element={<ProtectedRoute/>}>
                             <Route path="/" element={<Layout/>}>
                                 <Route index element={<HomePage/>}/>
-                                <Route path="/item/lost/:id" element={<LostItemPage />}/>
+                                <Route path="/item/lost/:id" element={<LostItemPage/>}/>
                                 <Route path="/item/found/:id" element={<FoundItemPage/>}/>
                                 <Route path="/add-item" element={<AddItem/>}/>
                                 <Route path="/support" element={<div>Support</div>}/>
+                                <Route path="/profile" element={<ProfilePage/>}/>
+
                             </Route>
                         </Route>
 

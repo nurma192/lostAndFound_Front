@@ -10,6 +10,7 @@ module.exports = {
 		extend: {
 			colors:{
 				primary: '#3b83f6',
+				secondary: '#fafafa',
 			},
 			fontFamily: {
 				'cera': ['"Cera Pro Regular"', 'sans-serif'], // Use "Cera Pro" as the base font family
