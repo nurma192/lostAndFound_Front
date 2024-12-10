@@ -4,9 +4,42 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bb6a87ad-c57d-414b-bf97-3b953d107643" name="Changes" comment="change">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="bb6a87ad-c57d-414b-bf97-3b953d107643" name="Changes" comment="update gitignore">
+      <change afterPath="$PROJECT_DIR$/src/api/changePasswordApi.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/changePhoneApi.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/changeTelegramApi.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/loginApi.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/registerApi.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/sendCodeApi.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/updateCredentialsApi.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ListBox.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ShowItemsGrid.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/forms/ChangePasswordForm.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/forms/UpdateCredentialsForm.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ui/MyPasswordInput.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ui/MyTextarea.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/ChangePasswordPage.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/MyItemsPage.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/ProfileInformationPage.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/ProfilePage.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/addItemApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/addItemApi.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/lostItemsApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/lostItemsApi.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/usersApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/userDataApi.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FoundItems.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FoundItems.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ItemCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ItemCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/LostItems.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LostItems.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/forms/LoginForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/LoginForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/forms/RegisterForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/RegisterForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/MyButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/MyButton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/MyInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/MyInput.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useAuth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useAuth.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/AddItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AddItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/queryClient.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/queryClient.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/itemTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/itemTypes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +57,7 @@
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/nurma192/Lost-Found_Front.git&quot;,
+    &quot;url&quot;: &quot;https://github.com/nurma192/lostAndFound_Front.git&quot;,
     &quot;accountId&quot;: &quot;e29362eb-81d8-4f15-bff9-8193f38b8bd9&quot;
   }
 }</component>
@@ -39,22 +72,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/nurmakhanbetkenes/Desktop/MineFolder/Projects/lost-and-found/src/api",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "/Users/nurmakhanbetkenes/Desktop/MineFolder/Projects/lost-and-found/node_modules/typescript/lib"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/nurmakhanbetkenes/Desktop/MineFolder/Projects/lost-and-found/src/api&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/nurmakhanbetkenes/Desktop/MineFolder/Projects/lost-and-found/node_modules/typescript/lib&quot;
   },
-  "keyToStringList": {
-    "ChangesTree.GroupingKeys": [
-      "directory"
+  &quot;keyToStringList&quot;: {
+    &quot;ChangesTree.GroupingKeys&quot;: [
+      &quot;directory&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -73,10 +106,10 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/components" />
+      <recent name="$PROJECT_DIR$/src/components/ui" />
+      <recent name="$PROJECT_DIR$/src/pages" />
       <recent name="$PROJECT_DIR$/public/icons" />
       <recent name="$PROJECT_DIR$/public" />
-      <recent name="$PROJECT_DIR$/src/Layout" />
-      <recent name="$PROJECT_DIR$/src/layout" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -263,7 +296,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733400161534</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="update girignore">
+      <option name="closed" value="true" />
+      <created>1733467847180</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1733467847180</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -317,6 +358,7 @@
     <MESSAGE value="remove node modules2" />
     <MESSAGE value="remove node modules3" />
     <MESSAGE value="change" />
-    <option name="LAST_COMMIT_MESSAGE" value="change" />
+    <MESSAGE value="update girignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="update girignore" />
   </component>
 </project>

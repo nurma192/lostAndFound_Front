@@ -1,7 +1,9 @@
 import {useEffect, useState} from "react";
+import {useNavigate} from "react-router-dom";
 
 export const useAuth = () => {
     const [token, setToken] = useState<string>('');
+    const navigate = useNavigate();
 
     useEffect(() => {
         const savedToken = localStorage.getItem('token');
@@ -13,11 +15,13 @@ export const useAuth = () => {
     const login = (newToken: string) => {
         localStorage.setItem('token', newToken);
         setToken(newToken);
+        navigate('/')
     }
 
     const logout = () => {
         localStorage.removeItem('token');
         setToken('');
+        navigate('/login')
     }
 
 
