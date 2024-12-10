@@ -1,130 +1,122 @@
 import React, {useState} from 'react';
 import {SubmitHandler, useForm} from "react-hook-form";
 import MyButton from "../ui/MyButton";
-import {useLocation, useNavigate} from "react-router-dom";
+import {useRegister} from "../../api/registerApi";
+import {useSendCode} from "../../api/sendCodeApi";
+import {MyInput} from "../ui/MyInput";
 
-type RegisterFormBody = {
+export type RegisterFormBody = {
     email: string;
     password: string;
     passwordConfirm: string;
-    code: string
+    code: string;
+    name: string;
+    surname: string;
 }
 
 function RegisterForm() {
-    const navigate = useNavigate();
     const [registerFormError, setRegisterFormError] = useState<string>('');
+    const {handleSubmit, control, trigger, watch} = useForm<RegisterFormBody>()
 
-    const registerForm = useForm<RegisterFormBody>()
+    const {mutate: register, isLoading: registerLoading} = useRegister()
+    const {mutate: sendCode, isLoading: sendCodeLoading} = useSendCode()
+
     const onSubmitRegister: SubmitHandler<RegisterFormBody> = async (data) => {
-        console.log(data);
-        const res = await fetch(`${process.env.REACT_APP_API_URL}/api/signup`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
+        register(data, {
+            onError: (error) => {
+                if (error instanceof Error) {
+                    setRegisterFormError(error.message || 'An error occurred during registration.');
+                } else {
+                    setRegisterFormError('An unknown error occurred.');
+                }
             },
-            body: JSON.stringify({email: data.email, password: data.password, code: data.code}),
-        })
-        const json = await res.json();
-        if (!res.ok) {
-            setRegisterFormError(json.message)
-        }else{
-            navigate('/login')
-        }
-        console.log("onSubmitRegister",json)
+        });
     }
 
-    const sendCode = async () => {
-        const isValid = await registerForm.trigger("email");
+    const onClickSendCode = async () => {
+        const isValid = await trigger("email");
         if (!isValid) {
             console.log("Invalid email. Please enter a valid email address.");
             return;
         }
-        const email = registerForm.watch("email")
-        try {
-            const res = await fetch(`${process.env.REACT_APP_API_URL}/api/sendcode`, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({email})
-            })
-            const json = await res.json();
-            if (!res.ok) {
-                setRegisterFormError(json.message)
-            }
-            console.log("sendCode", json)
-        } catch (e) {
-            console.log(e)
-        }
+        const email = watch("email")
+        sendCode(email, {
+            onError: (error) => {
+                if (error instanceof Error) {
+                    setRegisterFormError(error.message || 'An error occurred while sending the code.');
+                } else {
+                    setRegisterFormError('An error occurred while sending the code.');
+                }
+            },
+        });
     }
 
     const inputClass = "w-full border rounded p-2"
 
     return (
         <>
-            <form onSubmit={registerForm.handleSubmit(onSubmitRegister)} className="flex flex-col gap-2">
-                <input
-                    placeholder="Email"
-                    type="text"
-                    className={inputClass}
-                    {...registerForm.register("email", {
-                        required: "Email is required",
-                        pattern: {
-                            value: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
-                            message: "Invalid email address"
-                        }
-                    })}
+            <form onSubmit={handleSubmit(onSubmitRegister)} className="flex flex-col gap-2">
+                <MyInput
+                    name={'email'}
+                    label={'Email'}
+                    type="email"
+                    control={control}
                 />
-                {registerForm.formState.errors.email &&
-				    <span className="text-red-500 text-sm">{registerForm.formState.errors.email.message}</span>}
                 <div className="flex gap-2">
-                    <input
-                        placeholder="Code"
-                        type="text"
-                        className={inputClass}
-                        {...registerForm.register("code", {
-                            required: "Code is required"
-                        })}
-                    />
                     <MyButton
                         className="w-full h-full text-white py-3"
                         color="primary"
-                        onClick={() => sendCode()}>
+                        onClick={() => onClickSendCode()}
+                        disabled={sendCodeLoading}
+                    >
                         Send code
                     </MyButton>
+                    <MyInput
+                        name={'code'}
+                        type="text"
+                        label={'Code'}
+                        control={control}
+                        required="Code is required"
+                    />
                 </div>
-                {registerForm.formState.errors.code &&
-				    <span className="text-red-500 text-sm">{registerForm.formState.errors.code.message}</span>}
-                <input
-                    placeholder="Password"
-                    type="password"
-                    className={`${inputClass} tracking-widest`}
-                    {...registerForm.register("password", {
-                        required: "Password is required"
-                    })}
+                <MyInput
+                    name={'name'}
+                    type="text"
+                    label={'Name'}
+                    required="Name is required"
+                    control={control}
                 />
-                <input
-                    placeholder="Confirm Password"
-                    type="password"
-                    className={`${inputClass} tracking-widest`}
-                    {...registerForm.register("passwordConfirm", {
-                        required: "Password is required",
-                        validate: (value) => {
-                            if (value !== registerForm.getValues("password")) {
-                                return "Passwords do not match";
-                            }
-                            return true;
-                        }
-                    })}
+                <MyInput
+                    name={'surname'}
+                    type="text"
+                    label={'Surname'}
+                    required="Surname is required"
+                    control={control}
                 />
-                {registerForm.formState.errors.passwordConfirm && <span
-				    className="text-red-500 text-sm">{registerForm.formState.errors.passwordConfirm.message}</span>}
+                <MyInput
+                    name={'password'}
+                    type="password"
+                    label={'Password'}
+                    required="Password is required"
+                    control={control}
+                />
+                <MyInput
+                    name={'passwordConfirm'}
+                    type="password"
+                    label={'Confirm Password'}
+                    required="Password is required"
+                    control={control}
+                    validate={(value) =>
+                        value === watch('password') || 'Passwords do not match'
+                    }
+                />
                 {registerFormError && <span className="text-red-500 text-sm">{registerFormError}</span>}
-
                 <MyButton
                     className="w-full mb-4 py-2"
                     color="primary"
-                    type="submit">
+                    type="submit"
+                    disabled={registerLoading}
+                >
                     Register
                 </MyButton>
             </form>

@@ -1,5 +1,12 @@
 import React, {useState} from 'react';
-import {CalendarDate, DatePicker, Input, Radio, RadioGroup, Skeleton, Textarea} from "@nextui-org/react";
+import {
+    CalendarDate,
+    CircularProgress,
+    DatePicker,
+    Radio,
+    RadioGroup,
+    Skeleton,
+} from "@nextui-org/react";
 import {Controller, SubmitHandler, useForm} from "react-hook-form";
 import MyButton from "../components/ui/MyButton";
 import {useCategoriesData} from "../api/categoriesApi";
@@ -7,8 +14,10 @@ import {useAddItem} from "../api/addItemApi";
 import MyMiniImage from "../components/ui/MyMiniImage";
 import {HiChevronLeft} from "react-icons/hi";
 import {HiChevronRight} from "react-icons/hi";
-import {DateValue} from "@internationalized/date";
+import {DateValue, getLocalTimeZone, today} from "@internationalized/date";
 import {useDateFormatter} from "@react-aria/i18n";
+import MyTextarea from "../components/ui/MyTextarea";
+import {MyInput} from "../components/ui/MyInput";
 
 export type AddItemFormBody = {
     itemName: string;
@@ -20,14 +29,13 @@ export type AddItemFormBody = {
 }
 
 function AddItem() {
-    const addItemForm = useForm<AddItemFormBody>()
+    const {handleSubmit, control, formState: {errors}} = useForm<AddItemFormBody>()
     const categoriesData = useCategoriesData()
     const [imagePreviews, setImagePreviews] = useState<string[]>([]);
     const [images, setImages] = useState<File[]>([]);
     const {mutate: addItem, isLoading, isError, isSuccess, error} = useAddItem();
     const [mainImage, setMainImage] = useState<number>(0);
     const formatter = useDateFormatter()
-
 
 
     const onSubmitAddItem: SubmitHandler<AddItemFormBody> = async (data) => {
@@ -43,7 +51,6 @@ function AddItem() {
                 return
             }
             const files = Array.from(e.target.files);
-            console.log(files)
             setImages([...images, ...files]);
 
             const previewUrls = files.map((file) => URL.createObjectURL(file));
@@ -110,43 +117,35 @@ function AddItem() {
             </div>
             <div className="w-1/2">
                 <h2>Item Details</h2>
-                <form className="flex flex-col gap-4 " onSubmit={addItemForm.handleSubmit(onSubmitAddItem)}>
+                <form className="flex flex-col items-start gap-4 " onSubmit={handleSubmit(onSubmitAddItem)}>
                     {/*todo create MyInput component*/}
-                    <Input type="text" size="sm" label="Name"
-                           isInvalid={!!addItemForm.formState.errors.itemName}
-                           errorMessage={addItemForm.formState.errors.itemName?.message}
-                           radius="sm"
-                           className={`w-[60%]`}
-                           classNames={{
-                               inputWrapper: "border border-neutral-200 bg-white rounded",
-                           }}
-                           {...addItemForm.register("itemName", {
-                               required: "Name is required",
-                           })}
-                    />
-                    <Textarea
-                        label="Description"
-                        placeholder="Enter your description"
-                        className={`w-[60%]`}
-                        isInvalid={!!addItemForm.formState.errors.description}
-                        classNames={{
-                            inputWrapper: "border border-neutral-200 bg-white rounded",
-                        }}
-                        {...addItemForm.register("description", {
-                            required: "Description is required",
-                        })}
+
+                    <MyInput
+                        name={'itemName'}
+                        label={"Item name"}
+                        control={control}
+                        required={"Item name is required"}
                     />
 
-                    <div className="">
+                    <MyTextarea
+                        name={'description'}
+                        label="Description"
+                        placeholder="Enter your description"
+                        control={control}
+                        required="Description is required"
+                    />
+
+                    <div className="w-full">
                         <Controller
                             name='categoryId'
-                            control={addItemForm.control}
+                            control={control}
+                            defaultValue=""
                             rules={{required: "Select the Category",}}
                             render={({field}) => (
                                 <RadioGroup
                                     value={field.value}
                                     onChange={field.onChange}
-                                    isInvalid={!!addItemForm.formState.errors.categoryId}
+                                    isInvalid={!!errors.categoryId}
                                     label="Category:">
                                     <div className={`grid grid-cols-2 gap-2`}>
                                         {categoriesData.isLoading &&
@@ -166,16 +165,17 @@ function AddItem() {
                         />
                     </div>
 
-                    <div className="">
+                    <div className="w-full">
                         <Controller
                             name='type'
-                            control={addItemForm.control}
+                            control={control}
                             rules={{required: "Select the Type"}}
+                            defaultValue="lost"
                             render={({field}) => (
                                 <RadioGroup
                                     value={field.value}
                                     onChange={field.onChange}
-                                    isInvalid={!!addItemForm.formState.errors.type}
+                                    isInvalid={!!errors.type}
                                     label="Type:">
                                     <div className={`flex gap-4`}>
                                         <Radio value={'lost'}>Lost Item</Radio>
@@ -186,26 +186,31 @@ function AddItem() {
                         />
                     </div>
 
-                    <div className="">
-                        <Controller name='date'
-                                    control={addItemForm.control}
-                                    rules={{required: "Select the Lost Date",}}
-                                    render={({field}) => (
-                                        <DatePicker
-                                            value={field.value}
-                                            onChange={field.onChange}
-                                            isInvalid={!!addItemForm.formState.errors.date}
-                                            label="Found/Lost date"
-                                            className="w-[60%]"
-                                            showMonthAndYearPickers={true}
-                                            granularity="day"
-                                            errorMessage={(value) => {
-                                                if (value.isInvalid) {
-                                                    return addItemForm.formState.errors.date?.message;
-                                                }
-                                            }}
-                                        />
-                                    )}  />
+                    <div className="w-full">
+                        <Controller
+                            name='date'
+                            control={control}
+                            rules={{required: "Select the Lost Date",}}
+                            defaultValue={today(getLocalTimeZone())}
+                            render={({field}) => (
+                                <DatePicker
+                                    value={field.value}
+                                    onChange={field.onChange}
+                                    isInvalid={!!errors.date}
+                                    label="Found/Lost date"
+                                    className="w-full max-w-[400px]"
+                                    showMonthAndYearPickers={true}
+                                    granularity="day"
+                                    radius="sm"
+                                    classNames={{
+                                        selectorButton: ["hover:text-primary"],
+                                    }}
+                                    dateInputClassNames={{
+                                        inputWrapper: "border border-neutral-200 bg-white rounded",
+                                    }}
+                                    errorMessage={errors.date?.message}
+                                />
+                            )}/>
 
                     </div>
 
@@ -237,7 +242,17 @@ function AddItem() {
                         />
                     </div>
 
-                    <MyButton color={`primary`} type={`submit`} className={`w-[100px]`}>Add Item</MyButton>
+                    <div className="flex items-start gap-2">
+                        <MyButton color={`primary`}
+                                  type={`submit`}
+                                  className={`w-[100px] py-2 px-4`}
+                                  disabled={isLoading}
+                        >Add Item</MyButton>
+                        {isLoading && <CircularProgress color={'primary'}
+                                                         size={"lg"}
+                                                         label="Adding item..."
+                        />}
+                    </div>
                 </form>
             </div>
         </div>
