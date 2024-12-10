@@ -59,7 +59,7 @@ function ItemCard({item, type}: Props) {
             </div>
             <p className={`font-bold text-xl mt-auto`}>{item.name}</p>
             <p className={`text-sm`}>{item.category.name}</p>
-            {'lostDate' in item && <p className={`text-sm`}>1)Lost date: {format(new Date(item.lostDate), "dd.MM.yyyy")}</p>}
+            {'lostDate' in item && <p className={`text-sm`}>Lost date: {format(new Date(item.lostDate), "dd.MM.yyyy")}</p>}
             {'foundDate' in item && <p className={`text-sm`}>Found date:  {format(new Date(item.foundDate), "dd.MM.yyyy")}</p>}
         </div>
     );

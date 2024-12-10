@@ -1,5 +1,7 @@
 import {ItemsUser} from "./userTypes";
 
+export type ItemType = 'lost' | 'found'
+
 export interface Item {
     id: string;
     name: string;

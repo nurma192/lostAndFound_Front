@@ -3,6 +3,7 @@ import {useFoundItems} from "../api/foundItemsApi";
 import {ItemCard, SkeletonCard} from "./ItemCard";
 import {useCustomParams} from "../hooks/useCustomParams";
 import {Pagination} from "@nextui-org/react";
+import ShowItemsGrid from "./ShowItemsGrid";
 
 function FoundItems() {
     const customParams = useCustomParams();
@@ -29,11 +30,7 @@ function FoundItems() {
     return (
         <div className={``}>
             {isSuccess && data.foundItems.length === 0 && <h3>No items on this Category</h3>}
-            <div className="grid grid-cols-4 gap-8 mt-5">
-                {isSuccess && data.foundItems.map((foundItem, index) => (
-                    <ItemCard item={foundItem} key={index} type={`found`}/>
-                ))}
-            </div>
+            {isSuccess && <ShowItemsGrid items={data.foundItems} type={'found'}/>}
             {isSuccess && <Pagination showControls
 			                          total={data.totalPages}
 			                          initialPage={data.page}

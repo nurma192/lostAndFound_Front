@@ -1,6 +1,7 @@
 import {useQuery} from 'react-query';
 import {User} from "../types/userTypes";
 import {useNavigate} from "react-router-dom";
+import {useAuth} from "../hooks/useAuth";
 
 export const getUserData = async (token: string): Promise<User> => {
     if (!token) {
@@ -23,8 +24,9 @@ export const getUserData = async (token: string): Promise<User> => {
     return response.json();
 };
 
-export const useUserData = (token: string) => {
+export const useUserData = () => {
     const navigate = useNavigate();
+    const {token} = useAuth()
     return useQuery<User>('userData', () => getUserData(token), {
         enabled: !!token,
         onError: (err: any) => {

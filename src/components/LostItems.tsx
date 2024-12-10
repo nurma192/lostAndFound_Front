@@ -3,6 +3,7 @@ import {useLostItems} from "../api/lostItemsApi";
 import {SkeletonCard, ItemCard} from "./ItemCard";
 import {Pagination} from "@nextui-org/react";
 import {useCustomParams} from "../hooks/useCustomParams";
+import ShowItemsGrid from "./ShowItemsGrid";
 
 function LostItems() {
     const customParams = useCustomParams()
@@ -17,7 +18,8 @@ function LostItems() {
 
     useEffect(() => {
         refetch().catch(error => {
-            console.log(error);})
+            console.log(error);
+        })
     }, [customParams.searchParams]);
 
     if (isLoading || isFetching) {
@@ -34,11 +36,7 @@ function LostItems() {
     return (
         <div className={``}>
             {isSuccess && data.lostItems.length === 0 && <h3>No items on this Category</h3>}
-            <div className="grid grid-cols-4 gap-8 mt-5">
-                {isSuccess && data.lostItems.map((lostItem, index) => (
-                    <ItemCard item={lostItem} key={index} type={"lost"}/>
-                ))}
-            </div>
+            {isSuccess && <ShowItemsGrid items={data.lostItems} type={'lost'}/>}
             {isSuccess && <Pagination showControls
 			                          total={data.totalPages}
 			                          initialPage={data.page}

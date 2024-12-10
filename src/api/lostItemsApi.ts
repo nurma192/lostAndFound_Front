@@ -13,7 +13,7 @@ const getLostItems = async (category: string = '', query: string = '', page: num
     const url = new URL(`${process.env.REACT_APP_API_URL}/api/lost`);
     const params = new URLSearchParams();
 
-    if (category) params.append('category', category);
+    if (category) params.append('categoryId', category);
     if (query) params.append('query', query);
     if (page > 0) params.append('page', page.toString());
 
