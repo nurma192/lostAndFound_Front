@@ -1,6 +1,8 @@
 import {useMutation} from "react-query";
 import {AddItemFormBody} from "../pages/AddItem";
 import {useAuth} from "../hooks/useAuth";
+import {useNavigate} from "react-router-dom";
+import {toast} from "sonner";
 
 export const addItem = async (data: AddItemFormBody, token: string): Promise<any> => {
     const formData = new FormData();
@@ -9,7 +11,6 @@ export const addItem = async (data: AddItemFormBody, token: string): Promise<any
     formData.append('description', data.description);
     formData.append('categoryId', data.categoryId);
     formData.append('type', data.type);
-
 
     let response;
     if (data.type === 'lost') {
@@ -38,15 +39,32 @@ export const addItem = async (data: AddItemFormBody, token: string): Promise<any
         });
     }
 
-
     if (!response.ok) {
         throw new Error('Failed to add Item');
     }
 
-    return response.json();
+    const json = response.json();
+
+    toast.promise(json, {
+        loading: 'Loading...',
+        success: (data) => {
+            return `Item "${data.name}" has been added successfully.`;
+        },
+        error: (error) => {
+            return error.message || 'Failed to add item';
+        },
+    });
+
+    return json;
 }
 
 export const useAddItem = () => {
+    const navigate = useNavigate();
     const {token} = useAuth();
-    return useMutation((data: AddItemFormBody) => addItem(data, token));
+
+    return useMutation((data: AddItemFormBody) => addItem(data, token), {
+        onSuccess: () => {
+            navigate('/')
+        },
+    });
 };

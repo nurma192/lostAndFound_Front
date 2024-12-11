@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
     CalendarDate,
     CircularProgress,
@@ -18,6 +18,7 @@ import {DateValue, getLocalTimeZone, today} from "@internationalized/date";
 import {useDateFormatter} from "@react-aria/i18n";
 import MyTextarea from "../components/ui/MyTextarea";
 import {MyInput} from "../components/ui/MyInput";
+import {toast} from "sonner";
 
 export type AddItemFormBody = {
     itemName: string;
@@ -33,7 +34,7 @@ function AddItem() {
     const categoriesData = useCategoriesData()
     const [imagePreviews, setImagePreviews] = useState<string[]>([]);
     const [images, setImages] = useState<File[]>([]);
-    const {mutate: addItem, isLoading, isError, isSuccess, error} = useAddItem();
+    const {mutate: addItem, isLoading, isSuccess, isError, error} = useAddItem();
     const [mainImage, setMainImage] = useState<number>(0);
     const formatter = useDateFormatter()
 
@@ -43,6 +44,15 @@ function AddItem() {
         console.log(formData)
         addItem(formData);
     };
+
+    // useEffect(() => {
+    //     if(isSuccess){
+    //         toast.success("Successfully added!")
+    //     }
+    //     if(isLoading){
+    //         toast.loading("Adding...!")
+    //     }
+    // }, [isSuccess, isLoading])
 
     const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         if (e.target.files) {

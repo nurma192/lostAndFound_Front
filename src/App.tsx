@@ -10,6 +10,7 @@ import AddItem from "./pages/AddItem";
 import LostItemPage from "./pages/LostItemPage";
 import FoundItemPage from "./pages/FoundItemPage";
 import ProfilePage from "./pages/ProfilePage";
+import {Toaster} from "sonner";
 
 function App() {
     return (
@@ -35,6 +36,7 @@ function App() {
                         <Route path="/login" element={<Auth/>}/>
                         <Route path="/register" element={<Auth/>}/>
                     </Routes>
+                    <Toaster richColors />
                 </BrowserRouter>
             </NextUIProvider>
         </QueryClientProvider>

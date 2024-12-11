@@ -1,7 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
 import MyLink from "./ui/MyLink";
 import MyButton from "./ui/MyButton";
-import {useAuth} from "../hooks/useAuth";
 import {useUserData} from "../api/userDataApi";
 import {CircularProgress} from "@nextui-org/react";
 import {useCustomParams} from "../hooks/useCustomParams";
@@ -82,7 +81,7 @@ function Header() {
                     onClick={() => navigate("/profile")}>
                     <img className="w-4" src="/icons/profileIcon.svg" alt="profile"/>
                     <p className="">{userData.data?.name} {userData.data?.surname}</p>
-                    {userData.isLoading && <CircularProgress color="warning" aria-label="Loading..."/>}
+                    {userData.isLoading && <CircularProgress color="secondary" size={'sm'} aria-label="Loading..."/>}
                 </MyButton>
             </div>
         </header>
