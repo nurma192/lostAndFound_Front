@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import {useLostItems} from "../api/lostItemsApi";
-import {SkeletonCard, ItemCard} from "./ItemCard";
+import {SkeletonCard} from "./ItemCard";
 import {Pagination} from "@nextui-org/react";
 import {useCustomParams} from "../hooks/useCustomParams";
 import ShowItemsGrid from "./ShowItemsGrid";

@@ -20,23 +20,29 @@ function ItemCard({item, type}: Props) {
         navigate(`/item/${type}/${item.id}`)
     }
     const handleButtonClick = (event: React.MouseEvent) => {
-        event.stopPropagation(); // Prevent the click event from bubbling up
+        event.stopPropagation();
     };
     return (
-        <div className={`flex flex-col h-full cursor-pointer rounded hover:bg-neutral-100 transition p-2 w-full`}
+        <div className={`flex flex-col w-full h-full cursor-pointer rounded hover:bg-neutral-100 transition p-2`}
              onClick={() => {
                  goToItemPage()
              }}>
             <div className="w-full h-full mb-8  flex justify-center items-center relative">
                 <div className="relative w-full aspect-square">
-                    <img
-                        className="w-full h-full object-cover z-0"
-                        src={`${process.env.REACT_APP_API_URL}/${item.images[mainImage]}`}
-                        alt=""
-                    />
+                    {item.images.length > 0
+                        ? <img
+                            className="w-full h-full object-cover z-0"
+                            src={`${process.env.REACT_APP_API_URL}/${item.images[mainImage]}`}
+                            alt="Item image"
+                        /> : <img
+                            className="w-full h-full object-cover z-0"
+                            src={'/icons/addPhoto-scelet.svg'}
+                            alt="Item image"
+                        />
+                    }
                 </div>
                 <div className="absolute top-0 right-0 bg-white bg-opacity-50 p-0.5 text-sm">
-                    {mainImage + 1}/{item.images.length}
+                    {item.images.length > 0 && `${mainImage + 1}/${item.images.length}`}
                 </div>
                 <button
                     className={`absolute m-auto cursor-pointer left-0 pr-2 py-2 rounded-r z-10 transition hover:scale-110 text-primary bg-white bg-opacity-50 disabled:opacity-0`}
@@ -44,7 +50,7 @@ function ItemCard({item, type}: Props) {
                         handleButtonClick(event)
                         setMainImage(mainImage - 1)
                     }}
-                    disabled={mainImage === 0}>
+                    disabled={mainImage === 0 || item.images.length === 0}>
                     <FaAngleLeft/>
                 </button>
                 <button
@@ -53,14 +59,16 @@ function ItemCard({item, type}: Props) {
                         handleButtonClick(event)
                         setMainImage(mainImage + 1)
                     }}
-                    disabled={mainImage === item.images.length - 1}>
+                    disabled={mainImage === item.images.length - 1 || item.images.length === 0}>
                     <FaAngleRight/>
                 </button>
             </div>
             <p className={`font-bold text-xl mt-auto`}>{item.name}</p>
             <p className={`text-sm`}>{item.category.name}</p>
-            {'lostDate' in item && <p className={`text-sm`}>Lost date: {format(new Date(item.lostDate), "dd.MM.yyyy")}</p>}
-            {'foundDate' in item && <p className={`text-sm`}>Found date:  {format(new Date(item.foundDate), "dd.MM.yyyy")}</p>}
+            {'lostDate' in item &&
+				<p className={`text-sm`}>Lost date: {format(new Date(item.lostDate), "dd.MM.yyyy")}</p>}
+            {'foundDate' in item &&
+				<p className={`text-sm`}>Found date: {format(new Date(item.foundDate), "dd.MM.yyyy")}</p>}
         </div>
     );
 }

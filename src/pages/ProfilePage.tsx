@@ -21,7 +21,7 @@ function ProfilePage() {
             <div className="w-1/5 max-w-[260px]">
                 <ListBox variant={activeSection} setVariants={setActiveSection}/>
             </div>
-            <div className="flex-auto">
+            <div className="w-4/5">
                 {activeSection === 'profile' && (<ProfileInformationPage />)}
                 {(activeSection === 'lost' || activeSection === 'found') && (<MyItemsPage activeSection={activeSection}/>)}
                 {activeSection === 'changePassword' && (<ChangePasswordPage />)}

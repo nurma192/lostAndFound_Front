@@ -3,8 +3,6 @@ import LostItems from "../components/LostItems";
 import FoundItems from "../components/FoundItems";
 import CategoriesList from "../components/CategoriesList";
 import {useCustomParams} from "../hooks/useCustomParams";
-import {useLostItems} from "../api/lostItemsApi";
-import {useFoundItems} from "../api/foundItemsApi";
 
 function HomePage() {
     const customParams = useCustomParams()

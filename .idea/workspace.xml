@@ -4,13 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bb6a87ad-c57d-414b-bf97-3b953d107643" name="Changes" comment="change send code api">
+    <list default="true" id="bb6a87ad-c57d-414b-bf97-3b953d107643" name="Changes" comment="add eye to mypasswordinput">
+      <change afterPath="$PROJECT_DIR$/src/hooks/useToast.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/forms/ChangePasswordForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/ChangePasswordForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/forms/LoginForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/LoginForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/forms/RegisterForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/RegisterForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/MyInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/MyInput.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/MyPasswordInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/MyPasswordInput.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/addItemApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/addItemApi.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FoundItems.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FoundItems.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ItemCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ItemCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/LostItems.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LostItems.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/AddItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AddItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/HomePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/HomePage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/MyItemsPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MyItemsPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ProfilePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProfilePage.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -339,7 +347,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733830715221</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="add eye to mypasswordinput">
+      <option name="closed" value="true" />
+      <created>1733832160006</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1733832160006</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -373,7 +389,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add getLostItems" />
     <MESSAGE value="new hook custom params" />
     <MESSAGE value="set useQuery config" />
     <MESSAGE value="create ItemCard.tsx" />
@@ -398,6 +413,7 @@
     <MESSAGE value="fixes" />
     <MESSAGE value="user items page" />
     <MESSAGE value="change send code api" />
-    <option name="LAST_COMMIT_MESSAGE" value="change send code api" />
+    <MESSAGE value="add eye to mypasswordinput" />
+    <option name="LAST_COMMIT_MESSAGE" value="add eye to mypasswordinput" />
   </component>
 </project>
