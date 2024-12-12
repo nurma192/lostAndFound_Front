@@ -10,11 +10,12 @@ export interface LostItemsRequest {
     totalPages: number;
 }
 
-const getLostItems = async (category: string = '', query: string = '', page: number = -1, startDate: string, endDate: string): Promise<LostItemsRequest> => {
+const getLostItems = async (category: string = '', query: string = '', page: number = -1, startDate: string, endDate: string, sortType: ('desc' | 'asc')): Promise<LostItemsRequest> => {
     const url = new URL(`${process.env.REACT_APP_API_URL}/api/lost`);
     const params = new URLSearchParams();
 
     if (category) params.append('categoryId', category);
+    if (sortType) params.append('sort', sortType);
     if (query) params.append('query', query);
     if (page > 0) params.append('page', page.toString());
     if (startDate !== '') {
@@ -39,5 +40,5 @@ const getLostItems = async (category: string = '', query: string = '', page: num
 export const useSearchLostItems = () => {
     const customParams = useCustomParams()
 
-    return useQuery<LostItemsRequest>('lostItems', () => getLostItems(customParams.getCategoryFromParam(), customParams.getQueryFromParam(), customParams.getPageFromParam(), customParams.getStartDateFromParam(), customParams.getEndDateFromParam()));
+    return useQuery<LostItemsRequest>('lostItems', () => getLostItems(customParams.getCategoryFromParam(), customParams.getQueryFromParam(), customParams.getPageFromParam(), customParams.getStartDateFromParam(), customParams.getEndDateFromParam(), customParams.getSortTypeFromParam()));
 };

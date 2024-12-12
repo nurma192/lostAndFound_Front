@@ -1,11 +1,16 @@
-import React, {useEffect, useState} from 'react';
+import React, { useState} from 'react';
 import LostItems from "../components/LostItems";
 import FoundItems from "../components/FoundItems";
 import CategoriesList from "../components/CategoriesList";
 import {useCustomParams} from "../hooks/useCustomParams";
 import {ItemType} from "../types/itemTypes";
 import {DateValue, parseDate} from "@internationalized/date";
-import {Autocomplete, AutocompleteItem, DatePicker, DateRangePicker, RangeValue} from "@nextui-org/react";
+import {
+    DateRangePicker,
+    RangeValue,
+    Select,
+    SelectItem
+} from "@nextui-org/react";
 
 function HomePage() {
     const customParams = useCustomParams();
@@ -31,13 +36,18 @@ function HomePage() {
         customParams.setDateRangeToParam(dateRange)
     }
 
-    console.log(customParams.getStartDateFromParam())
-    console.log(customParams.getEndDateFromParam())
-
     const sorts = [
-        {label: "Newest", key: "asc"},
-        {label: "Latest", key: "desc"},
+        {label: "Newest", key: "desc"},
+        {label: "Latest", key: "asc"},
     ]
+    const [value, setValue] = useState<'asc' | 'desc'>("desc");
+
+    const handleSelectionChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        if (e.target.value === 'asc' || e.target.value === 'desc') {
+            setValue(e.target.value);
+            customParams.setSortTypeToParam(e.target.value);
+        }
+    };
 
     return (
         <>
@@ -77,14 +87,16 @@ function HomePage() {
                                     onChange={handleDateChange}
                                 />
                             </div>
-                            <Autocomplete
-                                className="max-w-xs"
-                                defaultItems={sorts}
-                                placeholder="Search an animal"
-                                // onChange={}
-                            >
-                                {(animal) => <AutocompleteItem key={animal.key}>{animal.label}</AutocompleteItem>}
-                            </Autocomplete>
+                            <div className="w-60">
+                                <Select
+                                    items={sorts}
+                                    placeholder="Select sorting"
+                                    selectedKeys={[value]}
+                                    onChange={handleSelectionChange}
+                                >
+                                    {(sort) => <SelectItem key={sort.key}>{sort.label}</SelectItem>}
+                                </Select>
+                            </div>
                         </div>
                     </div>
 

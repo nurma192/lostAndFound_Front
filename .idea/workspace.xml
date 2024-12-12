@@ -4,23 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bb6a87ad-c57d-414b-bf97-3b953d107643" name="Changes" comment="fix bugs">
-      <change afterPath="$PROJECT_DIR$/src/api/deleteFoundItemApi.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/api/deleteLostItemApi.ts" afterDir="false" />
+    <list default="true" id="bb6a87ad-c57d-414b-bf97-3b953d107643" name="Changes" comment="fix all bugs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/addItemApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/addItemApi.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/categoriesApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/categoriesApi.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/foundItemsApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/foundItemsApi.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/lostItemsApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/lostItemsApi.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ItemCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ItemCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LostItems.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LostItems.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ShowItemsGrid.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ShowItemsGrid.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/forms/LoginForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/LoginForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/forms/RegisterForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/RegisterForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/MyInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/MyInput.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hooks/useCustomParams.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useCustomParams.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/HomePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/HomePage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/MyItemsPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MyItemsPage.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -373,7 +362,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733896226632</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="fix all bugs">
+      <option name="closed" value="true" />
+      <created>1733994488974</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1733994488974</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -407,7 +404,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="create ItemCard.tsx" />
     <MESSAGE value="create CategoriesList.tsx" />
     <MESSAGE value="create lostItemsApi foundItemsApi and components" />
     <MESSAGE value="change userApi logic" />
@@ -432,6 +428,7 @@
     <MESSAGE value="add eye to mypasswordinput" />
     <MESSAGE value="add sonner toast" />
     <MESSAGE value="fix bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix bugs" />
+    <MESSAGE value="fix all bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix all bugs" />
   </component>
 </project>

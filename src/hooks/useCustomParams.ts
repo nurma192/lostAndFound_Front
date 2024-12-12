@@ -84,15 +84,19 @@ export const useCustomParams = () => {
         currentParams.set('endDate', endDate);
         setSearchParams(currentParams);
     }
-    const getSortTypeFromParam = (): string => {
-        const sortType = searchParams.get('sortType');
-        return sortType ? sortType : '';
+    const getSortTypeFromParam = (): ('desc' | 'asc') => {
+        const sortType = searchParams.get('sort');
+        if(sortType === 'desc' || sortType === 'asc'){
+            return sortType
+        }
+        return 'desc'
     }
     const setSortTypeToParam = (sortType: ('desc' | 'asc')) => {
         const currentParams = new URLSearchParams(searchParams);
-        currentParams.set('sortType', sortType);
+        currentParams.set('sort', sortType);
         setSearchParams(currentParams);
     }
+
 
 
     const resetAllParams = () => {
