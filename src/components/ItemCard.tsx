@@ -11,10 +11,11 @@ interface Props {
     item: Item;
     type: "lost" | "found",
     isMyItem?: boolean
-    deleteItem?: (id:string) => void
+    deleteItem?: (id:string) => void,
+    updateUserData?: () => void
 }
 
-function ItemCard({item, type, isMyItem = false, deleteItem = () => {}}: Props) {
+function ItemCard({item, type, isMyItem = false, deleteItem = () => {}, updateUserData = ()  => {}}: Props) {
     const [mainImage, setMainImage] = useState(0)
     const navigate = useNavigate();
     const {mutate: deleteLostItem, ...deleteFoundItemQuery } = useDeleteLostItem()
@@ -34,12 +35,15 @@ function ItemCard({item, type, isMyItem = false, deleteItem = () => {}}: Props) 
             deleteFoundItem(id, {
                 onSuccess: () =>{
                     deleteItem(id)
+                    updateUserData()
                 }
             })
         }else{
             deleteLostItem(id, {
                 onSuccess: () =>{
                     deleteItem(id)
+                    updateUserData()
+
                 }
             })
         }

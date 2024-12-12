@@ -13,7 +13,7 @@ type Props = {
 function ShowItemsGrid({items, type, isMyItems = false, updateUserData}: Props) {
     const [showItems, setShowItems] = useState(items)
     const deleteItem = (id: string) => {
-        setShowItems(items.filter(item => item.id !== id))
+        setShowItems(showItems.filter(item => item.id !== id))
     }
     if (items.length === 0) {
         return <div className={`w-full flex items-center gap-2 justify-center my-4`}>
@@ -25,7 +25,7 @@ function ShowItemsGrid({items, type, isMyItems = false, updateUserData}: Props) 
         <div className="grid grid-cols-4 gap-8 mt-5">
             {showItems.map((item, index) => (
                 <>
-                    <ItemCard item={item} key={index} type={type} isMyItem={isMyItems} deleteItem={deleteItem}/>
+                    <ItemCard item={item} key={index} type={type} isMyItem={isMyItems} deleteItem={deleteItem} updateUserData={updateUserData}/>
                 </>
             ))}
         </div>
