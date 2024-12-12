@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React from "react";
 import {Button} from "@nextui-org/react";
 import {Link, useLocation} from "react-router-dom";
 import MyButton from "../components/ui/MyButton";
@@ -15,10 +15,10 @@ function Auth() {
             </Link>
             <div className=" w-[500px] bg-white py-5 px-24 rounded-t-lg shadow-lg flex flex-col gap-2 ">
                 <div className="w-full flex justify-center items-center gap-5 my-5">
-                    <Link to="/login"
+                    <Link to={"/login"}
                           className={`text-xl ${location.pathname === "/login" ? " text-blue-500" : " text-black"}`}>Login</Link>
                     |
-                    <Link to="/register"
+                    <Link to={"/register"}
                           className={`text-xl ${location.pathname === "/register" ? " text-blue-500" : " text-black"}`}>Register</Link>
                 </div>
                 <p className="text-gray-600 text-xs">

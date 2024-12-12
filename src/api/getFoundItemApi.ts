@@ -1,4 +1,4 @@
-import {FoundItem, LostItem} from "../types/itemTypes";
+import {FoundItem} from "../types/itemTypes";
 import {useQuery} from "react-query";
 
 

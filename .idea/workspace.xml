@@ -4,10 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bb6a87ad-c57d-414b-bf97-3b953d107643" name="Changes" comment="fix all sort select">
+    <list default="true" id="bb6a87ad-c57d-414b-bf97-3b953d107643" name="Changes" comment="fix delete user item">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ItemCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ItemCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ShowItemsGrid.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ShowItemsGrid.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Layout/Layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Layout/Layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/categoriesApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/categoriesApi.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/foundItemsApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/foundItemsApi.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/getFoundItemApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/getFoundItemApi.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/lostItemsApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/lostItemsApi.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ItemAllInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ItemAllInfo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useCustomParams.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useCustomParams.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/AddItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AddItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Auth.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Auth.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -376,7 +383,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733995697398</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="fix delete user item">
+      <option name="closed" value="true" />
+      <created>1733996161958</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1733996161958</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -410,7 +425,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="create lostItemsApi foundItemsApi and components" />
     <MESSAGE value="change userApi logic" />
     <MESSAGE value="categories counts from request Type" />
     <MESSAGE value="changes" />
@@ -435,6 +449,7 @@
     <MESSAGE value="fix bugs" />
     <MESSAGE value="fix all bugs" />
     <MESSAGE value="fix all sort select" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix all sort select" />
+    <MESSAGE value="fix delete user item" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix delete user item" />
   </component>
 </project>

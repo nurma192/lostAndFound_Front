@@ -1,5 +1,5 @@
 import React from "react";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet} from "react-router-dom";
 import Header from "../components/Header";
 
 function Layout() {
@@ -11,9 +11,6 @@ function Layout() {
                     <Outlet />
                 </div>
             </div>
-            {/*<footer className="w-full flex justify-center py-5 bg-[#333] text-white">*/}
-            {/*    Footer*/}
-            {/*</footer>*/}
         </>
     );
 }

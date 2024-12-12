@@ -1,7 +1,6 @@
 import {useQuery} from 'react-query';
 import {Item} from "../types/itemTypes";
 import {useCustomParams} from "../hooks/useCustomParams";
-import {parseDate} from "@internationalized/date";
 
 export interface LostItemsRequest {
     lostItems: Item[],

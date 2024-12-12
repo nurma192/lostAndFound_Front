@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useState} from 'react';
 import {
     CalendarDate,
     CircularProgress,
@@ -14,11 +14,9 @@ import {useAddItem} from "../api/addItemApi";
 import MyMiniImage from "../components/ui/MyMiniImage";
 import {HiChevronLeft} from "react-icons/hi";
 import {HiChevronRight} from "react-icons/hi";
-import {DateValue, getLocalTimeZone, today} from "@internationalized/date";
-import {useDateFormatter} from "@react-aria/i18n";
+import { getLocalTimeZone, today} from "@internationalized/date";
 import MyTextarea from "../components/ui/MyTextarea";
 import {MyInput} from "../components/ui/MyInput";
-import {toast} from "sonner";
 
 export type AddItemFormBody = {
     itemName: string;
@@ -34,9 +32,8 @@ function AddItem() {
     const categoriesData = useCategoriesData()
     const [imagePreviews, setImagePreviews] = useState<string[]>([]);
     const [images, setImages] = useState<File[]>([]);
-    const {mutate: addItem, isLoading, isSuccess, isError, error} = useAddItem();
+    const {mutate: addItem, isLoading, isError, error} = useAddItem();
     const [mainImage, setMainImage] = useState<number>(0);
-    const formatter = useDateFormatter()
 
 
     const onSubmitAddItem: SubmitHandler<AddItemFormBody> = async (data) => {
@@ -80,14 +77,6 @@ function AddItem() {
     }
     const prevPhoto = () => {
         setMainImage(prevState => prevState - 1)
-    }
-
-    const formatDate = (date: DateValue) => {
-        const day = date.day.toString().padStart(2, '0');
-        const month = (date.month + 1).toString().padStart(2, '0'); // Months are 0-based
-        const year = date.year;
-
-        return `${day}-${month}-${year}`; // Returns the formatted string as "DD-MM-YYYY"
     }
 
     return (
@@ -264,6 +253,7 @@ function AddItem() {
                         />}
                     </div>
                 </form>
+                {isError && (error instanceof Error) && <span className="text-red-500 text-sm">{error.message}</span>}
             </div>
         </div>
     );

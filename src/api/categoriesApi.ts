@@ -1,7 +1,6 @@
 import {useQuery} from "react-query";
 import {Categories} from "../types/categories";
 import {useCustomParams} from "../hooks/useCustomParams";
-import {parseDate} from "@internationalized/date";
 
 export const getCategories = async (query: string = '', startDate: string, endDate: string): Promise<Categories[]> => {
     const url = new URL(`${process.env.REACT_APP_API_URL}/api/categories`);

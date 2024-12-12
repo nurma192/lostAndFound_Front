@@ -1,5 +1,5 @@
 import {useSearchParams} from "react-router-dom";
-import {CalendarDate, RangeValue} from "@nextui-org/react";
+import { RangeValue} from "@nextui-org/react";
 import {DateValue} from "@internationalized/date";
 
 export const useCustomParams = () => {

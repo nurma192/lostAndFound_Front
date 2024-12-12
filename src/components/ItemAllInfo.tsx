@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {DatePicker, Skeleton, Textarea} from "@nextui-org/react";
 import {FaTelegram, FaWhatsapp} from "react-icons/fa";
 import {CgMail} from "react-icons/cg";
@@ -8,7 +8,7 @@ import {format} from "date-fns/format";
 import {parseDate} from "@internationalized/date";
 
 interface Props {
-    itemQuery: UseQueryResult<LostItem, unknown> | UseQueryResult<FoundItem, unknown>
+    itemQuery: UseQueryResult<LostItem> | UseQueryResult<FoundItem>
 }
 
 function ItemAllInfo({itemQuery}: Props) {
@@ -69,7 +69,7 @@ function ItemAllInfo({itemQuery}: Props) {
                         {itemQuery.isSuccess && <div className="flex items-center gap-1 ">
 							<FaTelegram className={`text-2xl`}/>
 							<h4 className={`text-neutral-600`}>Telegram: </h4>
-							<h3>@{itemQuery.data.user.telegram}</h3>
+							<h3 className='underline'><a href={`https://t.me/${itemQuery.data.user.telegram}`}>@{itemQuery.data.user.telegram}</a></h3>
 						</div>}
                     </Skeleton>
                     <Skeleton isLoaded={itemQuery.isSuccess}
