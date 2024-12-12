@@ -19,8 +19,8 @@ function RegisterForm() {
     const [registerFormError, setRegisterFormError] = useState<string>('');
     const {handleSubmit, control, trigger, watch} = useForm<RegisterFormBody>()
 
-    const {mutate: register, isLoading: registerLoading} = useRegister()
-    const {mutate: sendCode, isLoading: sendCodeLoading} = useSendCode()
+    const {mutate: register, isLoading: registerLoading, ...registerQuery} = useRegister()
+    const {mutate: sendCode, isLoading: sendCodeLoading, ...sendCodeQuery} = useSendCode()
 
     const onSubmitRegister: SubmitHandler<RegisterFormBody> = async (data) => {
         register(data, {
@@ -51,8 +51,6 @@ function RegisterForm() {
             },
         });
     }
-
-    const inputClass = "w-full border rounded p-2"
 
     return (
         <>
@@ -110,6 +108,8 @@ function RegisterForm() {
                     }
                 />
                 {registerFormError && <span className="text-red-500 text-sm">{registerFormError}</span>}
+                {registerQuery.isError && (registerQuery.error instanceof Error) && <span className="text-red-500 text-sm">{registerQuery.error.message}</span>}
+                {sendCodeQuery.isError && (sendCodeQuery.error instanceof Error) && <span className="text-red-500 text-sm">{sendCodeQuery.error.message}</span>}
                 <MyButton
                     className="w-full mb-4 py-2"
                     color="primary"

@@ -8,7 +8,11 @@ type Props = {
     activeSection: ItemType
 }
 function MyItemsPage({activeSection}:Props) {
-    const {data, isSuccess, isLoading, isError} = useUserData()
+    const {data, isSuccess, isLoading, isError, refetch} = useUserData()
+
+    const updateUserData = () => [
+        refetch()
+    ]
 
     return (
         <div className={`w-full`}>
@@ -16,8 +20,8 @@ function MyItemsPage({activeSection}:Props) {
             {isLoading && <CircularProgress />}
             {isError && <h3>Error :(((</h3>}
             {isSuccess && <div>
-                {activeSection === 'found' && <ShowItemsGrid items={data.findItems} type={activeSection} />}
-                {activeSection === 'lost' && <ShowItemsGrid items={data.lostItems} type={activeSection} />}
+                {activeSection === 'found' && <ShowItemsGrid items={data.findItems} type={activeSection} isMyItems={true} updateUserData={updateUserData}/>}
+                {activeSection === 'lost' && <ShowItemsGrid items={data.lostItems} type={activeSection} isMyItems={true} updateUserData={updateUserData} />}
             </div>}
         </div>
     )

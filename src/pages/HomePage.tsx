@@ -3,26 +3,41 @@ import LostItems from "../components/LostItems";
 import FoundItems from "../components/FoundItems";
 import CategoriesList from "../components/CategoriesList";
 import {useCustomParams} from "../hooks/useCustomParams";
+import {ItemType} from "../types/itemTypes";
+import {DateValue, parseDate} from "@internationalized/date";
+import {Autocomplete, AutocompleteItem, DatePicker, DateRangePicker, RangeValue} from "@nextui-org/react";
 
 function HomePage() {
-    const customParams = useCustomParams()
-    const [subPage, setSubPage] = useState<('lost' | 'found')>(customParams.getTypeFromParam()) // lost || found
+    const customParams = useCustomParams();
+
+    const [subPage, setSubPage] = useState<ItemType>(customParams.getTypeFromParam());
     const [itemsCount, setItemsCount] = useState({
         lostItemsCount: 0,
         foundItemsCount: 0,
-    })
+    });
 
-    const handleSetSubPage = (pageName: ('lost' | 'found')) => {
+
+    const handleSetSubPage = (pageName: 'lost' | 'found') => {
         const currentParams = new URLSearchParams(customParams.searchParams);
         currentParams.set('type', pageName);
         currentParams.delete('category');
         currentParams.delete('page');
         customParams.setSearchParams(currentParams);
+        setSubPage(pageName);
+    };
+
+    const handleDateChange = (dateRange: RangeValue<DateValue>) => {
+        console.log(dateRange)
+        customParams.setDateRangeToParam(dateRange)
     }
 
-    useEffect(() => {
-        setSubPage(customParams.getTypeFromParam())
-    }, [customParams.searchParams])
+    console.log(customParams.getStartDateFromParam())
+    console.log(customParams.getEndDateFromParam())
+
+    const sorts = [
+        {label: "Newest", key: "asc"},
+        {label: "Latest", key: "desc"},
+    ]
 
     return (
         <>
@@ -37,20 +52,39 @@ function HomePage() {
                             <button className="px-2 py-2 " onClick={() => handleSetSubPage("lost")}>
                                 <h3 className={`border-b-3 flex items-center gap-1 px-1 ${subPage === 'lost' ? 'border-blue-500 text-blue-500 font-bold' : 'border-white'}`}>
                                     Lost Items
-                                    <span className="bg-primary text-sm text-white px-1.5 rounded-2xl flex justify-center items-center">{itemsCount.lostItemsCount}</span>
+                                    <span
+                                        className="bg-primary text-sm text-white px-1.5 rounded-2xl flex justify-center items-center">{itemsCount.lostItemsCount}</span>
                                 </h3>
 
                             </button>
                             <button className="px-2 py-2" onClick={() => handleSetSubPage("found")}>
                                 <h3 className={`border-b-3 flex items-center gap-1 px-1 ${subPage === 'found' ? 'border-blue-500 text-blue-500 font-bold' : 'border-white'}`}>
                                     Found Items
-                                    <span className="bg-primary text-sm text-white px-1.5 rounded-2xl flex justify-center items-center">{itemsCount.foundItemsCount}</span>
+                                    <span
+                                        className="bg-primary text-sm text-white px-1.5 rounded-2xl flex justify-center items-center">{itemsCount.foundItemsCount}</span>
                                 </h3>
 
                             </button>
                         </div>
-                        <div className="">
-                            <h3>Sort by: Default sorting</h3>
+                        <div className="flex gap-2">
+                            <div className="">
+                                <DateRangePicker
+                                    defaultValue={(customParams.getStartDateFromParam() !== '' && customParams.getEndDateFromParam() !== '') ? {
+                                        start: parseDate(customParams.getStartDateFromParam() || ''),
+                                        end: parseDate(customParams.getEndDateFromParam() || '')
+                                    } : undefined}
+                                    classNames={{inputWrapper: "rounded bg-white border"}}
+                                    onChange={handleDateChange}
+                                />
+                            </div>
+                            <Autocomplete
+                                className="max-w-xs"
+                                defaultItems={sorts}
+                                placeholder="Search an animal"
+                                // onChange={}
+                            >
+                                {(animal) => <AutocompleteItem key={animal.key}>{animal.label}</AutocompleteItem>}
+                            </Autocomplete>
                         </div>
                     </div>
 

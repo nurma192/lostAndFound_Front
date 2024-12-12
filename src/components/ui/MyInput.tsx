@@ -12,6 +12,7 @@ interface Props {
     required?: string;
     validate?: (value: any) => string | boolean;
     endContent?: JSX.Element;
+    isRequired?: boolean;
 }
 
 export const MyInput: React.FC<Props> = ({
@@ -22,7 +23,8 @@ export const MyInput: React.FC<Props> = ({
                                              control,
                                              required = '',
                                              endContent,
-                                             validate
+                                             validate,
+                                             isRequired
                                          }
 ) => {
 
@@ -40,7 +42,7 @@ export const MyInput: React.FC<Props> = ({
             id={name}
             label={label}
             type={type}
-            isRequired={!!required}
+            isRequired={!!required || isRequired}
             placeholder={placeholder}
             value={field.value}
             name={field.name}

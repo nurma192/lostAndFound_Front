@@ -1,4 +1,6 @@
 import {useSearchParams} from "react-router-dom";
+import {CalendarDate, RangeValue} from "@nextui-org/react";
+import {DateValue} from "@internationalized/date";
 
 export const useCustomParams = () => {
     const [searchParams, setSearchParams] = useSearchParams();
@@ -53,6 +55,45 @@ export const useCustomParams = () => {
         setSearchParams(currentParams);
     }
 
+    const setDateRangeToParam = (dateRange: RangeValue<DateValue>) => {
+        const currentParams = new URLSearchParams(searchParams);
+        const startDate = `${dateRange.start.year}-${String(dateRange.start.month).padStart(2, '0')}-${String(dateRange.start.day).padStart(2, '0')}`;
+        const endDate = `${dateRange.end.year}-${String(dateRange.end.month).padStart(2, '0')}-${String(dateRange.end.day).padStart(2, '0')}`;
+        currentParams.set('startDate', startDate);
+        currentParams.set('endDate', endDate);
+        setSearchParams(currentParams);
+    }
+
+    const getStartDateFromParam = (): string => {
+        const startDate = searchParams.get('startDate');
+        return startDate ? startDate : '';
+    }
+    const setStartDateToParam = (date: DateValue) => {
+        const currentParams = new URLSearchParams(searchParams);
+        const startDate = `${date.year}-${String(date.month).padStart(2, '0')}-${String(date.day).padStart(2, '0')}`;
+        currentParams.set('startDate', startDate);
+        setSearchParams(currentParams);
+    }
+    const getEndDateFromParam = (): string => {
+        const endDate = searchParams.get('endDate');
+        return endDate ? endDate : '';
+    }
+    const setEndDateToParam = (date: DateValue) => {
+        const currentParams = new URLSearchParams(searchParams);
+        const endDate = `${date.year}-${String(date.month).padStart(2, '0')}-${String(date.day).padStart(2, '0')}`;
+        currentParams.set('endDate', endDate);
+        setSearchParams(currentParams);
+    }
+    const getSortTypeFromParam = (): string => {
+        const sortType = searchParams.get('sortType');
+        return sortType ? sortType : '';
+    }
+    const setSortTypeToParam = (sortType: ('desc' | 'asc')) => {
+        const currentParams = new URLSearchParams(searchParams);
+        currentParams.set('sortType', sortType);
+        setSearchParams(currentParams);
+    }
+
 
     const resetAllParams = () => {
         setSearchParams({});
@@ -69,6 +110,13 @@ export const useCustomParams = () => {
         setQueryToParam,
         resetAllParams,
         getTypeFromParam,
-        setTypeToParam
+        setTypeToParam,
+        getStartDateFromParam,
+        setStartDateToParam,
+        getEndDateFromParam,
+        setEndDateToParam,
+        setDateRangeToParam,
+        getSortTypeFromParam,
+        setSortTypeToParam
     }
 }

@@ -1,6 +1,7 @@
 import {useQuery} from 'react-query';
 import {Item} from "../types/itemTypes";
 import {useCustomParams} from "../hooks/useCustomParams";
+import {parseDate} from "@internationalized/date";
 
 export interface LostItemsRequest {
     lostItems: Item[],
@@ -9,13 +10,19 @@ export interface LostItemsRequest {
     totalPages: number;
 }
 
-const getLostItems = async (category: string = '', query: string = '', page: number = -1): Promise<LostItemsRequest> => {
+const getLostItems = async (category: string = '', query: string = '', page: number = -1, startDate: string, endDate: string): Promise<LostItemsRequest> => {
     const url = new URL(`${process.env.REACT_APP_API_URL}/api/lost`);
     const params = new URLSearchParams();
 
     if (category) params.append('categoryId', category);
     if (query) params.append('query', query);
     if (page > 0) params.append('page', page.toString());
+    if (startDate !== '') {
+        params.set('dateFrom', startDate);
+    }
+    if (endDate !== '') {
+        params.set('dateTo', endDate);
+    }
 
     url.search = params.toString();
 
@@ -29,8 +36,8 @@ const getLostItems = async (category: string = '', query: string = '', page: num
 };
 
 
-export const useLostItems = () => {
+export const useSearchLostItems = () => {
     const customParams = useCustomParams()
 
-    return useQuery<LostItemsRequest>('lostItems', () => getLostItems(customParams.getCategoryFromParam(), customParams.getQueryFromParam(), customParams.getPageFromParam()));
+    return useQuery<LostItemsRequest>('lostItems', () => getLostItems(customParams.getCategoryFromParam(), customParams.getQueryFromParam(), customParams.getPageFromParam(), customParams.getStartDateFromParam(), customParams.getEndDateFromParam()));
 };

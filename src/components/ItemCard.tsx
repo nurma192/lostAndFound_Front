@@ -1,18 +1,24 @@
-import React, {useEffect} from 'react';
 import {Item} from "../types/itemTypes";
 import {Skeleton} from "@nextui-org/react";
 import {FaAngleLeft, FaAngleRight} from "react-icons/fa";
 import {useNavigate} from "react-router-dom";
 import {format} from "date-fns/format";
+import {useDeleteLostItem} from "../api/deleteLostItemApi";
+import {useState} from "react";
+import {useDeleteFoundItem} from "../api/deleteFoundItemApi";
 
 interface Props {
     item: Item;
-    type: "lost" | "found"
+    type: "lost" | "found",
+    isMyItem?: boolean
+    deleteItem?: (id:string) => void
 }
 
-function ItemCard({item, type}: Props) {
-    const [mainImage, setMainImage] = React.useState(0)
+function ItemCard({item, type, isMyItem = false, deleteItem = () => {}}: Props) {
+    const [mainImage, setMainImage] = useState(0)
     const navigate = useNavigate();
+    const {mutate: deleteLostItem, ...deleteFoundItemQuery } = useDeleteLostItem()
+    const {mutate: deleteFoundItem, ...deleteLostItemQuery} = useDeleteFoundItem()
 
 
     const goToItemPage = () => {
@@ -22,6 +28,23 @@ function ItemCard({item, type}: Props) {
     const handleButtonClick = (event: React.MouseEvent) => {
         event.stopPropagation();
     };
+    const handleDeleteClick = (id: string, event: React.MouseEvent) => {
+        event.stopPropagation();
+        if (type === "found") {
+            deleteFoundItem(id, {
+                onSuccess: () =>{
+                    deleteItem(id)
+                }
+            })
+        }else{
+            deleteLostItem(id, {
+                onSuccess: () =>{
+                    deleteItem(id)
+                }
+            })
+        }
+
+    }
     return (
         <div className={`flex flex-col w-full h-full cursor-pointer rounded hover:bg-neutral-100 transition p-2`}
              onClick={() => {
@@ -69,6 +92,12 @@ function ItemCard({item, type}: Props) {
 				<p className={`text-sm`}>Lost date: {format(new Date(item.lostDate), "dd.MM.yyyy")}</p>}
             {'foundDate' in item &&
 				<p className={`text-sm`}>Found date: {format(new Date(item.foundDate), "dd.MM.yyyy")}</p>}
+            {isMyItem && <button className={`bg-red-600 mt-2 rounded text-white px-4 py-1 transition hover:bg-red-700 disabled:hidden`}
+			                     onClick={(e) => {
+                                     handleDeleteClick(item.id, e)
+                                 }}
+                                 disabled={deleteFoundItemQuery.isLoading || deleteLostItemQuery.isLoading}
+			>Delete</button>}
         </div>
     );
 }

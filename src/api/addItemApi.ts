@@ -17,7 +17,7 @@ export const addItem = async (data: AddItemFormBody, token: string): Promise<any
         data.images.forEach(image => {
             formData.append('lostItemImages', image);
         })
-        formData.append('lostDate', `${data.date.day}-${data.date.month}-${data.date.year}`);
+        formData.append('lostDate', `${data.date.year}-${data.date.month}-${data.date.day}`);
         response = await fetch(`${process.env.REACT_APP_API_URL}/api/lost/add`, {
             method: 'POST',
             headers: {
@@ -29,7 +29,7 @@ export const addItem = async (data: AddItemFormBody, token: string): Promise<any
         data.images.forEach(image => {
             formData.append('foundItemImages', image);
         })
-        formData.append('foundDate', `${data.date.day}-${data.date.month}-${data.date.year}`);
+        formData.append('foundDate', `${data.date.year}-${data.date.month}-${data.date.day}`);
         response = await fetch(`${process.env.REACT_APP_API_URL}/api/found/add`, {
             method: 'POST',
             headers: {

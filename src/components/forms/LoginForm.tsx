@@ -13,8 +13,7 @@ export type LoginFormBody = {
 }
 
 function LoginForm() {
-    const {mutate: login, isLoading, isError} = useLogin()
-    const [error, setError] = useState<string>('');
+    const {mutate: login, isLoading, isError, error} = useLogin()
 
     const onSubmitLogin = async (data: LoginFormBody) => {
         console.log(data)
@@ -43,6 +42,7 @@ function LoginForm() {
                     type={'email'}
                     control={control}
                     required={"Email is required"}
+                    isRequired={true}
                 />
                 <MyPasswordInput
                     name={'password'}
@@ -51,7 +51,7 @@ function LoginForm() {
                     required={"Password is required"}
                 />
 
-                {error && <span className="text-red-500 text-sm">{error}</span>}
+                {isError && (error instanceof Error) && <span className="text-red-500 text-sm">{error.message}</span>}
                 <MyButton
                     className="w-full mb-4 text-white bg-red-500 py-2"
                     color="primary"

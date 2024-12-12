@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {useLostItems} from "../api/lostItemsApi";
+import {useSearchLostItems} from "../api/lostItemsApi";
 import {SkeletonCard} from "./ItemCard";
 import {Pagination} from "@nextui-org/react";
 import {useCustomParams} from "../hooks/useCustomParams";
@@ -14,7 +14,7 @@ function LostItems() {
         isFetching,
         refetch,
         isSuccess
-    } = useLostItems()
+    } = useSearchLostItems()
 
     useEffect(() => {
         refetch().catch(error => {
