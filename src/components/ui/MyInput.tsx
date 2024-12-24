@@ -41,6 +41,7 @@ export const MyInput: React.FC<Props> = ({
         <Input
             id={name}
             label={label}
+            variant={'bordered'}
             type={type}
             isRequired={!!required || isRequired}
             placeholder={placeholder}
@@ -49,7 +50,14 @@ export const MyInput: React.FC<Props> = ({
             isInvalid={invalid}
             onChange={field.onChange}
             onBlur={field.onBlur}
-            errorMessage={`${errors[name]?.message ?? ''}`}
+            // errorMessage={`${errors[name]?.message ?? ''}`}
+            errorMessage={({validationDetails, validationErrors}) => {
+                if (validationDetails.typeMismatch) {
+                    return "Please enter a valid email address";
+                }
+
+                return validationErrors;
+            }}
             classNames={{
                 inputWrapper: `rounded border border-neural-700 bg-white`,
                 input: `${type === 'password' && 'tracking-widest'}`

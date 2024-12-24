@@ -1,8 +1,6 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {useForm} from "react-hook-form";
 import MyButton from "../ui/MyButton";
-import {useNavigate} from "react-router-dom";
-import {useAuth} from "../../hooks/useAuth";
 import {MyInput} from "../ui/MyInput";
 import {useLogin} from "../../api/loginApi";
 import {MyPasswordInput} from "../ui/MyPasswordInput";
@@ -17,7 +15,7 @@ function LoginForm() {
 
     const onSubmitLogin = async (data: LoginFormBody) => {
         console.log(data)
-       login(data)
+        login(data)
     }
 
     const {

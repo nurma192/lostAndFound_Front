@@ -4,17 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bb6a87ad-c57d-414b-bf97-3b953d107643" name="Changes" comment="fix delete user item">
+    <list default="true" id="bb6a87ad-c57d-414b-bf97-3b953d107643" name="Changes" comment="remove not used things">
+      <change afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deployment.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Layout/Layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Layout/Layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/categoriesApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/categoriesApi.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/foundItemsApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/foundItemsApi.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/getFoundItemApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/getFoundItemApi.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/lostItemsApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/lostItemsApi.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ItemAllInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ItemAllInfo.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/useCustomParams.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useCustomParams.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/AddItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AddItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Auth.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Auth.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ShowItemsGrid.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ShowItemsGrid.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/forms/LoginForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/LoginForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/MyInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/MyInput.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/HomePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/HomePage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +37,10 @@
     &quot;url&quot;: &quot;https://github.com/nurma192/lostAndFound_Front.git&quot;,
     &quot;accountId&quot;: &quot;e29362eb-81d8-4f15-bff9-8193f38b8bd9&quot;
   }
+}</component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
 }</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
@@ -391,7 +397,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733996161958</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="remove not used things">
+      <option name="closed" value="true" />
+      <created>1734002415443</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1734002415443</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -425,7 +439,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="change userApi logic" />
     <MESSAGE value="categories counts from request Type" />
     <MESSAGE value="changes" />
     <MESSAGE value="add items api" />
@@ -450,6 +463,7 @@
     <MESSAGE value="fix all bugs" />
     <MESSAGE value="fix all sort select" />
     <MESSAGE value="fix delete user item" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix delete user item" />
+    <MESSAGE value="remove not used things" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove not used things" />
   </component>
 </project>

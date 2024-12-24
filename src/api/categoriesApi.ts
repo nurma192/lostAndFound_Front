@@ -7,6 +7,7 @@ export const getCategories = async (query: string = '', startDate: string, endDa
 
     const params = new URLSearchParams();
     if (query) params.append('query', query);
+
     if (startDate !== '') {
         params.set('dateFrom', startDate);
     }

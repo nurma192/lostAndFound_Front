@@ -15,6 +15,12 @@ module.exports = {
 			fontFamily: {
 				'cera': ['"Cera Pro Regular"', 'sans-serif'], // Use "Cera Pro" as the base font family
 			},
+			screens: {
+				xs: '480px',
+				md: '768px',
+				xl: '1000px',
+				xl2: '1200px',
+			},
 		},
 	},
 	plugins: [nextui({

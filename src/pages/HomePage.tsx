@@ -57,7 +57,7 @@ function HomePage() {
 
                 </div>
                 <div className="w-4/5 pl-8 flex flex-col">
-                    <div className="flex justify-between">
+                    <div className="flex justify-between flex-col md:flex-row">
                         <div className="flex gap-2">
                             <button className="px-2 py-2 " onClick={() => handleSetSubPage("lost")}>
                                 <h3 className={`border-b-3 flex items-center gap-1 px-1 ${subPage === 'lost' ? 'border-blue-500 text-blue-500 font-bold' : 'border-white'}`}>
@@ -76,7 +76,7 @@ function HomePage() {
 
                             </button>
                         </div>
-                        <div className="flex gap-2">
+                        <div className="flex gap-2 flex-col md:flex-row">
                             <div className="">
                                 <DateRangePicker
                                     defaultValue={(customParams.getStartDateFromParam() !== '' && customParams.getEndDateFromParam() !== '') ? {

@@ -29,7 +29,6 @@ function App() {
                                 <Route path="/add-item" element={<AddItem/>}/>
                                 <Route path="/support" element={<div>Support</div>}/>
                                 <Route path="/profile" element={<ProfilePage/>}/>
-
                             </Route>
                         </Route>
 
